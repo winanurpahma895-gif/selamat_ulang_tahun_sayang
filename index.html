@@ -1,0 +1,1115 @@
+```html
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Happy Birthday, My Favorite Person ♡</title>
+
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=Poppins:wght@300;400;500;600&display=swap');
+
+:root {
+    --white: #ffffff;
+    --cream: #faf8f3;
+    --silver: #a9adb6;
+    --dark: #333740;
+    --gray: #777c86;
+    --line: #e5e4e0;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 25px;
+}
+
+body {
+    background: var(--cream);
+    color: var(--dark);
+    font-family: 'Poppins', sans-serif;
+    overflow-x: hidden;
+}
+
+body::before {
+    content: "";
+    position: fixed;
+    inset: 0;
+    pointer-events: none;
+    z-index: -1;
+    background:
+        radial-gradient(ellipse at 10% 10%, #e9e7e055, transparent 45%),
+        radial-gradient(ellipse at 90% 80%, #dce2eb55, transparent 45%);
+}
+
+#stars {
+    position: fixed;
+    inset: 0;
+    pointer-events: none;
+    overflow: hidden;
+    z-index: 0;
+}
+
+.star {
+    position: absolute;
+    width: 3px;
+    height: 3px;
+    border-radius: 50%;
+    background: #9ca3af;
+    animation: twinkle 3s infinite alternate;
+}
+
+@keyframes twinkle {
+    from {
+        opacity: .15;
+        transform: scale(.7);
+    }
+    to {
+        opacity: .7;
+        transform: scale(1.5);
+    }
+}
+
+.page {
+    position: relative;
+    z-index: 1;
+}
+
+h1, h2, h3 {
+    font-family: 'Cormorant Garamond', serif;
+    font-weight: 400;
+}
+
+h2 {
+    font-size: clamp(38px, 8vw, 66px);
+    line-height: 1.12;
+    margin-bottom: 25px;
+}
+
+p {
+    color: #656a74;
+    font-size: 13px;
+    font-weight: 300;
+    line-height: 2.2;
+}
+
+.silver {
+    color: #969ba6;
+}
+
+.eyebrow {
+    color: #888d97;
+    font-size: 10px;
+    letter-spacing: 4px;
+    margin-bottom: 22px;
+    text-transform: uppercase;
+}
+
+.center {
+    text-align: center;
+}
+
+.container {
+    width: 100%;
+    max-width: 740px;
+    margin: auto;
+}
+
+section {
+    padding: 100px 23px;
+}
+
+.divider {
+    width: 70px;
+    height: 1px;
+    background: linear-gradient(
+        90deg,
+        transparent,
+        #aeb3bc,
+        transparent
+    );
+    margin: 30px auto;
+}
+
+.btn {
+    padding: 15px 25px;
+    border: 1px solid #b7bbc4;
+    border-radius: 30px;
+    background: #ffffff;
+    color: #4a4e57;
+    font-family: inherit;
+    font-size: 10px;
+    letter-spacing: 2px;
+    cursor: pointer;
+    transition: .3s;
+    box-shadow: 0 5px 20px #aeb3bc20;
+}
+
+.btn:hover {
+    background: #e9ebef;
+    transform: translateY(-3px);
+    box-shadow: 0 10px 25px #aeb3bc35;
+}
+
+/* OPENING */
+
+#opening {
+    min-height: 100svh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    text-align: center;
+    padding: 30px 22px;
+    background:
+        radial-gradient(ellipse at center, #ffffff 0%, #faf8f3 75%);
+}
+
+.moon {
+    font-size: 48px;
+    margin-bottom: 25px;
+    color: #a8adb7;
+    animation: float 4s ease-in-out infinite;
+}
+
+@keyframes float {
+    50% {
+        transform: translateY(-9px);
+    }
+}
+
+#opening h1 {
+    font-size: clamp(48px, 11vw, 88px);
+    line-height: 1;
+    background: linear-gradient(
+        130deg,
+        #343943,
+        #a2a7b0,
+        #555b65
+    );
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+}
+
+.subtitle {
+    font-size: 10px;
+    letter-spacing: 2px;
+    margin: 25px 0 35px;
+}
+
+.tiny {
+    font-size: 10px;
+    color: #999da5;
+    margin-top: 20px;
+}
+
+/* MUSIC */
+
+.music-control {
+    position: fixed;
+    right: 15px;
+    bottom: 15px;
+    z-index: 20;
+    padding: 12px 17px;
+    border: 1px solid #d7d8dd;
+    border-radius: 30px;
+    background: #ffffffed;
+    color: #4b505a;
+    font-size: 10px;
+    cursor: pointer;
+    box-shadow: 0 4px 20px #0000000d;
+    backdrop-filter: blur(10px);
+}
+
+/* PHOTO */
+
+.photo-frame {
+    max-width: 350px;
+    margin: 35px auto;
+    padding: 10px;
+    border: 1px solid #d8d9de;
+    background: white;
+    box-shadow: 0 15px 45px #777c8618;
+    transform: rotate(-1deg);
+    transition: .4s;
+}
+
+.photo-frame:hover {
+    transform: rotate(0) scale(1.02);
+}
+
+.photo-frame img {
+    display: block;
+    width: 100%;
+    height: 420px;
+    object-fit: cover;
+}
+
+.photo-caption {
+    padding: 18px 8px 12px;
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 24px;
+    font-style: italic;
+    text-align: center;
+    color: #555a64;
+}
+
+/* LETTER */
+
+.letter {
+    padding: clamp(22px, 5vw, 50px);
+    background: #ffffffc9;
+    border: 1px solid #e6e5e1;
+    box-shadow: 0 10px 35px #aeb3bc0d;
+}
+
+.letter p {
+    margin-bottom: 25px;
+}
+
+.letter h3 {
+    color: #515661;
+    font-size: 32px;
+    margin: 45px 0 22px;
+}
+
+.signature {
+    margin-top: 35px;
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 29px;
+    font-style: italic;
+    color: #858b96;
+}
+
+/* CARDS */
+
+.cards {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 15px;
+    margin-top: 35px;
+}
+
+.card {
+    padding: 27px;
+    background: #ffffffb8;
+    border: 1px solid #e5e5e2;
+    transition: .3s;
+}
+
+.card:hover {
+    transform: translateY(-4px);
+    border-color: #bdc1ca;
+    box-shadow: 0 10px 25px #aeb3bc18;
+}
+
+.card small {
+    display: block;
+    font-size: 10px;
+    color: #9196a0;
+    letter-spacing: 2px;
+    margin-bottom: 12px;
+}
+
+.card h3 {
+    font-size: 29px;
+    margin-bottom: 10px;
+    color: #4b505a;
+}
+
+/* TIMER */
+
+.timer-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 8px;
+    margin-top: 35px;
+}
+
+.timer-box {
+    padding: 17px 4px;
+    border: 1px solid #e0e1e4;
+    background: #ffffffbd;
+    box-shadow: 0 5px 15px #aeb3bc0b;
+}
+
+.timer-box strong {
+    display: block;
+    color: #525762;
+    font-size: clamp(20px, 5vw, 32px);
+    font-weight: 300;
+}
+
+.timer-box span {
+    display: block;
+    color: #898e98;
+    font-size: 8px;
+    letter-spacing: 1px;
+    margin-top: 8px;
+}
+
+/* QUOTE */
+
+.quote {
+    font-family: 'Cormorant Garamond', serif;
+    color: #565b65;
+    font-size: clamp(30px, 6vw, 45px);
+    line-height: 1.5;
+}
+
+.quote small {
+    display: block;
+    color: #9297a0;
+    font-family: 'Poppins', sans-serif;
+    font-size: 9px;
+    letter-spacing: 3px;
+    margin-top: 25px;
+}
+
+/* REVEAL */
+
+.reveal {
+    opacity: 0;
+    transform: translateY(25px);
+    transition: opacity .8s ease, transform .8s ease;
+}
+
+.reveal.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* FINAL */
+
+.final-section {
+    min-height: 85svh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(
+        180deg,
+        transparent,
+        #ffffff80,
+        transparent
+    );
+}
+
+.final-box {
+    max-width: 600px;
+    text-align: center;
+    padding: 40px 15px;
+}
+
+#finalMessage {
+    display: none;
+    margin-top: 30px;
+    animation: appear 1s ease;
+}
+
+@keyframes appear {
+    from {
+        opacity: 0;
+        transform: translateY(15px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+footer {
+    padding: 35px 15px 45px;
+    text-align: center;
+    font-size: 9px;
+    letter-spacing: 2px;
+    color: #898e97;
+    border-top: 1px solid #e6e5e1;
+    background: #ffffff80;
+}
+
+@media (min-width: 650px) {
+    .cards {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    section {
+        padding-top: 125px;
+        padding-bottom: 125px;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    html {
+        scroll-behavior: auto;
+    }
+
+    *, *::before, *::after {
+        animation-duration: .01ms !important;
+        transition-duration: .01ms !important;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<div id="stars"></div>
+
+<audio id="bgMusic" src="sempurnaa.mp3" loop preload="auto"></audio>
+
+<button class="music-control" id="musicButton" hidden>
+    ♫ PLAY MUSIC
+</button>
+
+<div class="page">
+
+<!-- OPENING -->
+
+<div id="opening">
+    <div class="moon">☾</div>
+
+    <p class="eyebrow">A LITTLE SOMETHING FOR YOU</p>
+
+    <h1>Happy<br>Birthday.</h1>
+
+    <p class="subtitle">TO MY FAVORITE PERSON, WITH LOVE.</p>
+
+    <button class="btn" id="openButton">
+        OPEN YOUR SURPRISE ♡
+    </button>
+
+    <p class="tiny">take your time, read this slowly.</p>
+</div>
+
+<main id="mainContent" hidden>
+
+<!-- CHAPTER 1 -->
+
+<section>
+    <div class="container center reveal">
+
+        <p class="eyebrow">CHAPTER 01 — YOUR SPECIAL DAY</p>
+
+        <h2>Today is all<br>about <span class="silver">you.</span></h2>
+
+        <div class="divider"></div>
+
+        <p>
+            Hari ini adalah hari yang spesial karena seseorang yang berarti
+            dalam hidupku bertambah usia. Seseorang yang punya cerita
+            tersendiri dalam perjalanan hidupku, seseorang yang ingin aku
+            rayakan dengan cara sederhana tetapi penuh makna.
+        </p>
+
+        <p style="margin-top:20px">
+            Aku berharap kamu menikmati hari ini dengan bahagia. Semoga
+            ada banyak alasan untuk tersenyum, banyak hal baik yang datang,
+            dan banyak kenangan indah yang bisa kamu simpan.
+        </p>
+
+        <p style="margin-top:20px">
+            Hari ini bukan cuma tentang bertambahnya usia. Ini juga tentang
+            menghargai perjalanan yang sudah kamu lewati, semua hal yang
+            sudah kamu pelajari, dan kesempatan baru yang menunggu di
+            depan sana.
+        </p>
+
+    </div>
+</section>
+
+<!-- CHAPTER 2: ONE PHOTO -->
+
+<section>
+    <div class="container reveal">
+
+        <p class="eyebrow center">CHAPTER 02 — A LITTLE MEMORY</p>
+
+        <h2 class="center">
+            One picture,<br>
+            <span class="silver">many feelings.</span>
+        </h2>
+
+        <div class="photo-frame">
+            <img src="foto 2.jpeg" alt="Foto kenangan kita">
+
+            <div class="photo-caption">
+                a little piece of our story ♡
+            </div>
+        </div>
+
+        <p class="center">
+            Satu foto mungkin nggak bisa menceritakan semuanya, tetapi
+            terkadang satu gambar cukup untuk mengingatkan kita pada
+            sebuah momen. Tentang waktu yang pernah dilewati, percakapan
+            yang pernah terjadi, dan kenangan yang punya arti tersendiri.
+        </p>
+
+        <p class="center" style="margin-top:20px">
+            Aku ingin foto ini menjadi pengingat sederhana bahwa di antara
+            banyak hal yang terus berubah, ada kenangan yang tetap bisa
+            kita lihat kembali dengan senyuman.
+        </p>
+
+    </div>
+</section>
+
+<!-- CHAPTER 3: LONG LETTER -->
+
+<section>
+    <div class="container reveal">
+
+        <p class="eyebrow center">CHAPTER 03 — A LETTER FOR YOU</p>
+
+        <h2 class="center">
+            Dear, my<br>
+            <span class="silver">favorite person.</span>
+        </h2>
+
+        <div class="letter">
+
+            <p>happy birthday, sayanggg. 🤍</p>
+
+            <p>
+                Selamat bertambah usia, ya. Hari ini aku ingin menyampaikan
+                banyak hal yang mungkin nggak selalu bisa aku ungkapkan
+                secara langsung. Aku tahu halaman ini sederhana, tetapi
+                aku berharap setiap kalimat di dalamnya bisa menjadi
+                sesuatu yang membuat hari kamu terasa lebih spesial.
+            </p>
+
+            <p>
+                Pertama-tama, terima kasih karena sudah menjadi bagian
+                dari cerita hidup aku. Terima kasih untuk setiap obrolan,
+                candaan, perhatian kecil, dan waktu yang kita luangkan
+                untuk saling mengenal. Terkadang hal-hal sederhana justru
+                menjadi bagian yang paling berkesan ketika kita mengingatnya
+                kembali.
+            </p>
+
+            <p>
+                Aku berharap di usia kamu yang sekarang, kamu semakin
+                mengenal dirimu sendiri. Kamu semakin paham apa yang kamu
+                inginkan, apa yang ingin kamu perjuangkan, dan hal-hal
+                seperti apa yang membuat hidupmu terasa lebih bermakna.
+            </p>
+
+            <p>
+                Aku tahu perjalanan hidup nggak selalu mudah. Ada kalanya
+                semuanya berjalan sesuai harapan, tetapi ada juga saat
+                ketika sesuatu terasa lebih sulit daripada yang kita
+                bayangkan. Kalau suatu hari kamu mengalami hal seperti itu,
+                aku harap kamu nggak lupa bahwa satu hari yang berat
+                bukan berarti seluruh perjalananmu akan menjadi buruk.
+            </p>
+
+            <h3>For the days ahead...</h3>
+
+            <p>
+                Semoga kamu selalu diberikan kesehatan, ketenangan,
+                dan kekuatan untuk menjalani hari-harimu. Semoga setiap
+                usaha yang kamu lakukan membawa pelajaran berharga.
+                Semoga kamu bertemu dengan orang-orang yang tulus dan
+                lingkungan yang mendukungmu untuk berkembang.
+            </p>
+
+            <p>
+                Aku berharap semua impian yang kamu simpan bisa menemukan
+                jalannya. Mungkin nggak semuanya bisa tercapai dalam
+                waktu singkat, tetapi aku harap kamu tetap punya keberanian
+                untuk mencoba, kesabaran untuk menjalani proses, dan
+                keyakinan bahwa langkah kecil tetap punya arti.
+            </p>
+
+            <p>
+                Jangan terlalu keras kepada dirimu sendiri, ya. Kamu
+                nggak harus selalu menjadi yang terbaik dalam segala hal.
+                Kamu nggak harus membandingkan pencapaianmu dengan orang
+                lain. Setiap orang punya perjalanan yang berbeda, dan
+                kamu berhak menjalani perjalananmu dengan waktumu sendiri.
+            </p>
+
+            <p>
+                Kalau kamu melakukan kesalahan, belajarlah darinya.
+                Kalau rencanamu berubah, berikan dirimu kesempatan untuk
+                menyesuaikan diri. Kalau kamu merasa lelah, jangan lupa
+                beristirahat. Kamu juga perlu menikmati proses hidup,
+                bukan hanya terus memikirkan tujuan akhirnya.
+            </p>
+
+            <h3>Things I appreciate about you.</h3>
+
+            <p>
+                Ada banyak hal sederhana yang membuat seseorang terasa
+                berarti. Terkadang bukan tentang hadiah besar atau
+                kejutan yang mewah, tetapi tentang waktu yang diberikan,
+                perhatian yang tulus, percakapan yang menyenangkan,
+                dan usaha untuk memahami satu sama lain.
+            </p>
+
+            <p>
+                Aku menghargai kesempatan untuk mengenal kamu lebih jauh.
+                Aku menghargai cerita-cerita yang kita bagikan dan
+                pengalaman yang kita lewati. Setiap momen punya
+                ceritanya sendiri, dan aku berharap kita bisa terus
+                mengumpulkan kenangan baik selama perjalanan ini.
+            </p>
+
+            <p>
+                Aku tahu kita bukan dua orang yang selalu punya pikiran
+                sama. Kita punya kebiasaan, pandangan, dan cara menghadapi
+                sesuatu yang mungkin berbeda. Tapi aku berharap kita
+                selalu bisa belajar mendengarkan, berbicara dengan jujur,
+                dan menghargai perasaan satu sama lain.
+            </p>
+
+            <p>
+                Buat aku, hubungan yang baik bukan berarti nggak pernah
+                mengalami kesulitan. Hubungan yang baik adalah ketika
+                dua orang bersedia belajar, berkomunikasi, memperbaiki
+                kesalahan, dan tetap menghargai satu sama lain.
+            </p>
+
+            <h3>My wishes for us.</h3>
+
+            <p>
+                Untuk hubungan kita, aku berharap kita bisa terus tumbuh
+                menjadi pribadi yang lebih baik. Semoga kita bisa menjaga
+                kepercayaan, saling mendukung dalam mengejar impian,
+                dan memberi ruang bagi satu sama lain untuk berkembang.
+            </p>
+
+            <p>
+                Aku berharap kita bisa membicarakan hal-hal yang membuat
+                kita senang maupun hal-hal yang mengganggu pikiran kita.
+                Semoga kita nggak terburu-buru mengambil kesimpulan ketika
+                terjadi kesalahpahaman. Semoga kita bisa belajar meminta
+                maaf dengan tulus dan memperbaiki hal-hal yang memang
+                perlu diperbaiki.
+            </p>
+
+            <p>
+                Kita nggak harus menjadi pasangan yang sempurna.
+                Aku hanya berharap kita bisa menjalani hubungan ini
+                dengan tulus, saling menghargai, dan tetap menjadi
+                diri sendiri. Semoga hubungan ini membawa kebahagiaan,
+                ketenangan, dan pengalaman baik bagi kita berdua.
+            </p>
+
+            <h3>A little reminder for you.</h3>
+
+            <p>
+                Sayang, jangan lupa menikmati hidupmu. Tetap luangkan
+                waktu untuk keluarga, teman-teman, cita-cita, dan hal-hal
+                yang kamu sukai. Jangan sampai kamu terlalu sibuk
+                mengejar sesuatu hingga lupa menikmati hal baik yang
+                sudah ada di sekitarmu.
+            </p>
+
+            <p>
+                Aku berharap kamu punya banyak alasan untuk tersenyum.
+                Semoga ada hal-hal kecil yang membuat harimu terasa
+                menyenangkan, ada kesempatan baru yang membuatmu
+                bersemangat, dan ada orang-orang baik yang membuatmu
+                merasa dihargai.
+            </p>
+
+            <p>
+                Kalau suatu hari kamu membaca surat ini lagi, aku
+                berharap kamu bisa mengingat hari ulang tahunmu dengan
+                senyuman. Halaman ini mungkin sederhana, tetapi dibuat
+                khusus untuk merayakan hari spesialmu dan menyampaikan
+                doa-doa baik yang aku harapkan untukmu.
+            </p>
+
+            <p>
+                Sekali lagi, selamat ulang tahun, sayang. Semoga usia
+                barumu membawa kesehatan, kebahagiaan, kesempatan baik,
+                dan banyak pengalaman berharga. Semoga kamu semakin
+                dekat dengan impianmu dan semakin bangga terhadap
+                perjalanan yang sudah kamu tempuh.
+            </p>
+
+            <p>
+                Terima kasih sudah menjadi bagian dari cerita aku.
+                Semoga kita bisa terus belajar, tumbuh, dan menciptakan
+                kenangan baik bersama.
+            </p>
+
+            <div class="signature">
+                with love, always. ♡
+            </div>
+
+        </div>
+    </div>
+</section>
+
+<!-- CHAPTER 4: WISHES -->
+
+<section>
+    <div class="container center reveal">
+
+        <p class="eyebrow">CHAPTER 04 — LITTLE PRAYERS</p>
+
+        <h2>
+            A few wishes<br>
+            <span class="silver">for your new age.</span>
+        </h2>
+
+        <div class="cards">
+
+            <div class="card">
+                <small>01 / HEALTH</small>
+                <h3>Stay healthy.</h3>
+                <p>
+                    Semoga kamu selalu diberikan kesehatan dan
+                    kekuatan untuk menjalani setiap hari.
+                </p>
+            </div>
+
+            <div class="card">
+                <small>02 / DREAMS</small>
+                <h3>Reach your dreams.</h3>
+                <p>
+                    Semoga setiap usaha membawamu selangkah lebih
+                    dekat dengan cita-cita yang kamu impikan.
+                </p>
+            </div>
+
+            <div class="card">
+                <small>03 / HAPPINESS</small>
+                <h3>Find your peace.</h3>
+                <p>
+                    Semoga kamu menemukan kebahagiaan dalam hal-hal
+                    sederhana dan ketenangan dalam menjalani hidup.
+                </p>
+            </div>
+
+            <div class="card">
+                <small>04 / OUR STORY</small>
+                <h3>Keep growing.</h3>
+                <p>
+                    Semoga kita terus belajar memahami, menghargai,
+                    dan mendukung satu sama lain.
+                </p>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+<!-- CHAPTER 5: TIMER -->
+
+<section>
+    <div class="container center reveal">
+
+        <p class="eyebrow">CHAPTER 05 — OUR LITTLE TIMELINE</p>
+
+        <h2>
+            Time passes,<br>
+            <span class="silver">memories stay.</span>
+        </h2>
+
+        <p>
+            Setiap detik menjadi bagian kecil dari cerita kita.
+            Semoga ada banyak kenangan baik yang bisa kita ingat
+            dengan bahagia.
+        </p>
+
+        <div class="timer-grid">
+
+            <div class="timer-box">
+                <strong id="days">0</strong>
+                <span>DAYS</span>
+            </div>
+
+            <div class="timer-box">
+                <strong id="hours">0</strong>
+                <span>HOURS</span>
+            </div>
+
+            <div class="timer-box">
+                <strong id="minutes">0</strong>
+                <span>MINUTES</span>
+            </div>
+
+            <div class="timer-box">
+                <strong id="seconds">0</strong>
+                <span>SECONDS</span>
+            </div>
+
+        </div>
+
+        <p id="timerNote" style="margin-top:20px;font-size:10px">
+            Every second becomes a little part of our story. ♡
+        </p>
+
+    </div>
+</section>
+
+<!-- CHAPTER 6: QUOTE -->
+
+<section>
+    <div class="container center reveal">
+
+        <p class="eyebrow">CHAPTER 06 — REMEMBER THIS</p>
+
+        <div class="divider"></div>
+
+        <div class="quote">
+            "You don't have to be perfect to deserve beautiful things."
+
+            <small>A LITTLE REMINDER FOR YOU</small>
+        </div>
+
+        <div class="divider"></div>
+
+        <p>
+            Kamu berhak belajar, berkembang, mencoba hal baru, dan
+            menikmati setiap proses yang sedang kamu jalani.
+            Jangan lupa menghargai dirimu sendiri, bahkan untuk
+            kemajuan kecil yang mungkin belum dilihat orang lain.
+        </p>
+
+    </div>
+</section>
+
+<!-- CHAPTER 7: FINAL SURPRISE -->
+
+<section class="final-section">
+    <div class="final-box reveal">
+
+        <p class="eyebrow">THE LAST CHAPTER</p>
+
+        <h2>
+            One last<br>
+            <span class="silver">surprise.</span>
+        </h2>
+
+        <p>
+            Sebelum kamu menutup halaman ini, ada satu pesan terakhir
+            yang ingin aku sampaikan untuk kamu.
+        </p>
+
+        <div style="margin-top:30px">
+            <button class="btn" id="surpriseButton">
+                OPEN YOUR LAST SURPRISE ♡
+            </button>
+        </div>
+
+        <div id="finalMessage">
+
+            <div class="moon" style="margin-top:35px">✧</div>
+
+            <h2>
+                Happy Birthday,<br>
+                my favorite person.
+            </h2>
+
+            <p>
+                Selamat ulang tahun sekali lagi, sayang.
+                Semoga hari ini menjadi kenangan indah yang bisa
+                kamu simpan. Semoga masa depan membawa banyak
+                kesempatan baik, kebahagiaan, dan pengalaman
+                yang membuatmu semakin berkembang.
+            </p>
+
+            <p style="margin-top:22px">
+                Teruslah bermimpi, teruslah belajar, dan jangan
+                lupa menikmati perjalananmu sendiri.
+                Semoga ada banyak alasan untuk tersenyum pada
+                hari ini dan hari-hari yang akan datang.
+            </p>
+
+            <p style="margin-top:22px">
+                Thank you for being part of my story.
+                Here's to more beautiful memories, growth,
+                and happiness. 🤍
+            </p>
+
+            <div class="signature">
+                made with love ♡
+            </div>
+
+        </div>
+    </div>
+</section>
+
+<footer>
+    MADE WITH LOVE · JUST FOR YOU · ♡
+</footer>
+
+</main>
+</div>
+
+<script>
+// =====================================
+// 1. ANIMASI BINTANG
+// =====================================
+
+const stars = document.getElementById("stars");
+
+for (let i = 0; i < 70; i++) {
+    const star = document.createElement("span");
+
+    star.className = "star";
+    star.style.left = Math.random() * 100 + "%";
+    star.style.top = Math.random() * 100 + "%";
+    star.style.animationDelay = Math.random() * 4 + "s";
+    star.style.animationDuration = (2 + Math.random() * 4) + "s";
+
+    stars.appendChild(star);
+}
+
+// =====================================
+// 2. ANIMASI SCROLL
+// =====================================
+
+const revealObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+        if (entry.isIntersecting) {
+            entry.target.classList.add("visible");
+        }
+    });
+}, {
+    threshold: 0.12
+});
+
+document.querySelectorAll(".reveal").forEach(element => {
+    revealObserver.observe(element);
+});
+
+// =====================================
+// 3. MUSIK
+// =====================================
+
+const bgMusic = document.getElementById("bgMusic");
+const musicButton = document.getElementById("musicButton");
+
+document.getElementById("openButton").addEventListener("click", async () => {
+    document.getElementById("opening").style.display = "none";
+    document.getElementById("mainContent").hidden = false;
+
+    musicButton.hidden = false;
+
+    window.scrollTo({
+        top: 0,
+        behavior: "smooth"
+    });
+
+    bgMusic.volume = 0.4;
+
+    try {
+        await bgMusic.play();
+        musicButton.textContent = "♫ MUSIC: ON";
+    } catch (error) {
+        musicButton.textContent = "♫ PLAY MUSIC";
+    }
+});
+
+musicButton.addEventListener("click", async () => {
+    if (bgMusic.paused) {
+        try {
+            await bgMusic.play();
+            musicButton.textContent = "♫ MUSIC: ON";
+        } catch (error) {
+            musicButton.textContent = "♫ TRY AGAIN";
+        }
+    } else {
+        bgMusic.pause();
+        musicButton.textContent = "♫ MUSIC: OFF";
+    }
+});
+
+// =====================================
+// 4. TIMER JADIAN
+// TANGGAL JADIAN: 30 NOVEMBER 2025
+// =====================================
+
+const relationshipStart = new Date(2025, 10, 30, 0, 0, 0);
+
+function updateTimer() {
+    const now = new Date();
+    const difference = now - relationshipStart;
+
+    if (difference < 0) {
+        document.getElementById("days").textContent = "0";
+        document.getElementById("hours").textContent = "0";
+        document.getElementById("minutes").textContent = "0";
+        document.getElementById("seconds").textContent = "0";
+
+        document.getElementById("timerNote").textContent =
+            "Our story is about to begin. ♡";
+
+        return;
+    }
+
+    const totalSeconds = Math.floor(difference / 1000);
+
+    const days = Math.floor(totalSeconds / 86400);
+    const hours = Math.floor((totalSeconds % 86400) / 3600);
+    const minutes = Math.floor((totalSeconds % 3600) / 60);
+    const seconds = totalSeconds % 60;
+
+    document.getElementById("days").textContent = days;
+    document.getElementById("hours").textContent = hours;
+    document.getElementById("minutes").textContent = minutes;
+    document.getElementById("seconds").textContent = seconds;
+
+    document.getElementById("timerNote").textContent =
+        "Every second becomes a little part of our story. ♡";
+}
+
+updateTimer();
+setInterval(updateTimer, 1000);
+
+// =====================================
+// 5. KEJUTAN TERAKHIR
+// =====================================
+
+document.getElementById("surpriseButton").addEventListener("click", () => {
+    const message = document.getElementById("finalMessage");
+    const button = document.getElementById("surpriseButton");
+
+    message.style.display = "block";
+    button.style.display = "none";
+
+    for (let i = 0; i < 25; i++) {
+        const particle = document.createElement("span");
+
+        particle.textContent = ["♡", "✧", "✦"][
+            Math.floor(Math.random() * 3)
+        ];
+
+        particle.style.position = "fixed";
+        particle.style.left = Math.random() * 100 + "vw";
+        particle.style.top = "100vh";
+        particle.style.color = "#a5aab4";
+        particle.style.fontSize = (12 + Math.random() * 18) + "px";
+        particle.style.pointerEvents = "none";
+        particle.style.zIndex = "100";
+        particle.style.transition = "transform 4s linear, opacity 4s linear";
+
+        document.body.appendChild(particle);
+
+        requestAnimationFrame(() => {
+            particle.style.transform =
+                `translateY(-${window.innerHeight + 150}px) rotate(180deg)`;
+
+            particle.style.opacity = "0";
+        });
+
+        setTimeout(() => particle.remove(), 4200);
+    }
+});
+</script>
+
+</body>
+</html>
+```
